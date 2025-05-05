@@ -26,6 +26,7 @@ The script will generate:
 2) SAC or ObsPy (depending on the processing backend)
 3) wget or curl
 4) GNU octave
+5) mseed2sac
 
 ## Contacts
 
