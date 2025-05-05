@@ -1,4 +1,4 @@
-# envelope_fore
+# Envelope Waveforms
 This code allow the user to download the waveform of a seismic event provided the seismic network, station and time window.
 
 This script (`signal.sh`) is used to process seismic waveforms and extract the envelope function for a given station and event.
