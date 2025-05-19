@@ -10,7 +10,7 @@ rm a.dat
 
 #######IRIS######
 
-curl --output prova.dat 'http://service.iris.edu/fdsnws/dataselect/1/query?net=AK&sta=CHN&cha=BHZ&starttime=2021-07-29T06:00:00&endtime=2021-07-29T08:59:59&format=miniseed&nodata=404'
+curl --output signal.mseed 'http://service.iris.edu/fdsnws/dataselect/1/query?net=AK&sta=CHN&cha=BHZ&starttime=2021-07-29T06:00:00&endtime=2021-07-29T08:59:59&format=miniseed&nodata=404'
 
 #curl --output prova.dat 'http://service.iris.edu/fdsnws/dataselect/1/query?net=PB&sta=B916&cha=EHZ&starttime=2019-07-06T03:00:00&endtime=2019-07-06T05:59:59&format=miniseed&nodata=404'
 
@@ -44,12 +44,12 @@ curl --output prova.dat 'http://service.iris.edu/fdsnws/dataselect/1/query?net=A
 
 ######## mseed to dat conversion  ###################################
 
-mseed2sac prova.dat
+mseed2sac signal.mseed
 
 for i in $(ls *.SAC)
 do
     mv $i a.SAC
-    octave estrai.m
+    octave extract.m
     mv a.dat $i.dat
 done
 
@@ -64,7 +64,7 @@ cat *.SAC.dat > a.dat
 
 #################################################
 
-gfortran -O3 scrivi.f
+gfortran -O3 timefreq.f
 ./a.out
 
 octave hilbert.m
