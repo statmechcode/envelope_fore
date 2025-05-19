@@ -8,7 +8,7 @@ This script (`signal.sh`) is used to process seismic waveforms and extract the e
 Open signal.sh in a text editor and manually update the following information based on your target station and event:
 1) Station details (network, station code, location, component)
 2) Time window (start time, duration)
-3) Filter settings (band-pass limits) -> this one in the script filter_hilbert2.m
+3) Filter settings (band-pass limits) -> this one in the script hilbert.m
 
 Depending on your use case, the script contains multiple processing options (e.g., using different data sources).
 You should uncomment the relevant blocks and comment out the others to tailor the execution to your needs.
