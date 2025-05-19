@@ -67,4 +67,4 @@ cat *.SAC.dat > a.dat
 gfortran -O3 scrivi.f
 ./a.out
 
-octave filter_hilbert2.m
+octave hilbert.m
